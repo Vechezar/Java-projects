@@ -2,8 +2,8 @@ git init
 	- установка git в вызванной папке.
 	- создается скрытая папка .git
 
-git config --global user.name "-имя пользователя-"
-git config --global user.email -адрес почты-
+git config --global user.name "<username>"
+git config --global user.email <email>
 	- настройка доступа для пользователей
 	- добавляются в файле .gitconfig
 
@@ -11,14 +11,46 @@ git config --list
 	- список настроек
 
 Игнорирование файлов
--имя файла-/
+<file>/
 	- игнорирование всей папки
 
-*.-тип файла-
+*.<file type>
 	- игнорирование файлов определенного типа
 
 git status 
 	- проверка статуса файлов.
+git status --untracked-files=all
+	- отображаются отдельные файлы в игнорируемых каталогах
+
+cd <file>
+	- переход в указанную папку
+
+git add .
+	- происходит "снимок" файлов и их индексация
+
+git rm --cached <file>
+	- снятие индекса с файла
+
+git commit -a -m"<massage>"
+-a 	- автоматическая индексация отслеживаемых файлов (?)
+-m	- комментарий к коммиту
+
+git checkout -- <file>
+	- возвращение файла к состоянию, которое было проиндексировано последний раз
+git checkout -b <branch name>
+	- создание и переход на новую ветку с указанным именем
+git checkout <branch name>
+	- переключение на указанную ветку
+
+git branch
+	- список веток
+git branch -v
+	- более подробная информация о ветках
+git branch <branch name>
+	- создание новой ветки (без перехода на неё)
+
+git log
+	- логи коммитов
 
 git remote add origin https://github.com/Vechezar/Java-projects.git
 	- присваивание имени для пути репозитория
